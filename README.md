@@ -86,5 +86,9 @@ Arguments details:
 | `gym_env_name` | `"Walker2d-v4"`         | Gymnasium environment (any MuJoCo environment)                  |
 | `buffer_size`  | `4000`                  | Training buffer size                                            |
 
+## Authors 
+- [Tal Fiskus](https://www.linkedin.com/in/talfiskus/)
+- [Dr. Uri Shaham](https://www.linkedin.com/in/urishaham/)
+
 ## References
 [1] Raffin, A., Hill, A., Gleave, A., Kanervisto, A., Ernestus, M., and Dormann, N. Stable-baselines3: Reliable reinforcement learning implementations. Journal of Machine Learning Research, 22(268):1–8, 2021.

@@ -1,5 +1,8 @@
 # Turning Sand to Gold: Recycling Data to Bridge On-Policy and Off-Policy Learning via Causal Bound
 
+## Paper Link
+[Turning Sand to Gold on ArXiv](https://www.arxiv.org/abs/2507.11269)
+
 ## Code Overview
 Our code is built on the Stable Baselines3 library.
 

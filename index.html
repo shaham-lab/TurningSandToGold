@@ -352,7 +352,7 @@
 
             <p style="margin-top: 30px; font-size: 1.05em;">
               <strong>
-                SUFT</strong> leads to significant improvements in convergence rates and reward outcomes, achieving a <strong>437.05%</strong> mean reward ratio gain while using <strong>25 times smaller replay buffer size.</strong> This reflects in a <strong>96%</strong> reduction in resource demands.
+                SUFT</strong> leads to significant improvements in convergence rates and reward outcomes, achieving a <strong>437.05%</strong> mean reward ratio gain while using <strong>25 times smaller replay buffer size</strong>. This reflects in a <strong>96%</strong> reduction in resource demands.
                 These results underscore the potential of our approach to obtain high-performance DRL agents with significantly smaller buffers, paving the way for more computationally efficient and accessible DRL methods by enhancing <strong>sample efficiency at a negligible cost</strong>.
             </p>
         </section>
@@ -361,37 +361,38 @@
       <section>
         <h2>SUFT Causal Bound</h2>
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
-          We establish a <strong>causal upper bound</strong> on the on-policy loss, showing that it is bounded by the standard off-policy loss 
-          and an additional <strong>SUFT term</strong> that reuses past value network outputs stored in the experience replay buffer.
+            We establish a causal upper bound on the unobserved factual loss using the observed counterfactual loss and the estimated treatment effect.
         </p>
       
         <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
           \[
-            \epsilon_{\text{On-Policy}_Q}
-            \leq
-            \epsilon_{\text{Off-Policy}_Q}
+            \epsilon_{F_{\phi}} 
+            \leq 
+            \epsilon_{CF_{\phi}}
             +
-            \psi_{\text{SUFT}_Q}
+            \psi_{\phi} 
             + 
-            \delta
+            \delta.
           \]
         </div>
-      
+        <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
+            The interpretation of this causal upper bound in the DRL framework establishes an upper bound to the on-policy loss, by the standard off-policy loss and an additional <strong>SUFT off-policy evaluation term (OPE)</strong>.
+        </p>
         <p class="figure-caption" style="text-align: center; font-size: 0.95em; color: #6c757d; font-style: italic;">
           To the best of our knowledge, we are the first to introduce an upper bound on the factual loss within the causal framework and adapt it to the DRL setting, thereby bounding the on-policy loss.
         </p>
           <div class="method-grid">
             <div class="method-card">
-                <h4><i class="fas fa-scale-balanced"></i>SUFT Causal Bound</h4>
-                <p>We formalize an upper bound in the causal framework, integrate it into the DRL framework as an upper bound for the on-policy loss using the standard off-policy loss and the estimated treatment effect, which serves as an off-policy evaluation. This is the SUFT OPE term.</p>
+                <h4><i class="fas fa-scale-balanced"></i>Causal Bound Theorem</h4>
+                <p>We formalize an upper bound in the causal framework, and integrate it into the DRL framework as an upper bound for the on-policy loss.</p>
             </div>
             <div class="method-card">
-                <h4><i class="fas fa-arrows-rotate"></i> Recycling Value Network Outputs</h4>
-                <p>Our method utilizes and reuses the value network outputs in order to compute the SUFT OPE term. Our approach effectively transforms overlooked data into valuable insights, metaphorically <strong>turning sand data into gold</strong>.</p>
+                <h4><i class="fas fa-arrows-rotate"></i> Recycling Overlooked Data</h4>
+                <p>Our method utilizes and reuses the value network outputs in order to compute the SUFT OPE term. Our approach effectively transforms overlooked data into valuable causal insights, metaphorically <strong>turning sand data into gold</strong>.</p>
             </div>
             <div class="method-card">
-                <h4><i class="fas fa-globe"></i> Universal Implementation of the SUFT OPE Term</h4>
-                <p>Our method focuses on optimizing the SUFT causal bound, and it is applicable to any DRL agent with a V or Q-value network that influences its policy.</p>
+                <h4><i class="fas fa-globe"></i> Universal Implementation</h4>
+                <p>Our method is applicable to any DRL agent with a V or Q-value network that influences its policy. </p>
             </div>
         </div>
       </section>
@@ -411,11 +412,11 @@
             <div class="figure">
                 <img src="assets/atari_all_environments_improvements.png" alt="Log-scaled reward improvements comparison between agents using the additional SUFT term and the baseline agents without it across 57 Atari games. The results demonstrate the superior performance of our method across the majority of games. The red line indicates a 10% improvement, and the green line represents a 100% improvement. Left: Double DQN SUFT outperforms the baseline agent in 35 out of the 40 valid games; Right: PPO SUFT outperforms the baseline agent in 39 out of the 42 valid games.">
                 <p class="figure-caption">
-                    Log-scaled reward improvements comparison between agents using the additional SUFT term and the baseline agents without it across 57 Atari games. The results demonstrate the superior performance of our method across the majority of games. The red line indicates a 10% improvement, and the green line represents a 100% improvement. Left: Double DQN SUFT outperforms the baseline agent in 35 out of the 40 valid games; Right: PPO SUFT outperforms the baseline agent in 39 out of the 42 valid games.
+                    Log-scaled reward improvements comparison between agents using the additional SUFT term and the baseline agents without it across 57 Atari games. The red line indicates a 10% improvement, and the green line represents a 100% improvement. Left: Double DQN; Right PPO.
                 </p>
             </div>
             <p style="margin-top: 30px; font-size: 1.05em; line-height: 1.8;">
-                We demonstrate that random walks defined on different modality-specific representations exhibit remarkable similarity when those representations capture semantics well. This similarity enables us to learn <strong>universal embeddings</strong> - representation spaces where corresponding instances from different modalities naturally align, even when trained almost exclusively on unpaired data.
+                The resutls demonstrate the superior performance of our method across the majority of games. Double DQN SUFT outperforms the baseline agent in 35 out of the 40 valid games. PPO SUFT outperforms the baseline agent in 39 out of the 42 valid games.
             </p>
         </section>
 
@@ -433,6 +434,14 @@
             </p>
         </section>
 
+        <!-- Conclusion -->
+        <section>
+            <h2>Conclusion</h2>
+            <p>
+                This paper presents SUFT, a causal upper-bound loss optimization method that enhances DRL sample efficiency and reduces computational demands at <strong>negligible cost</strong>. We begin by establishing a provable bound on the factual loss within the Neyman-Rubin potential outcomes framework and seamlessly adapting it to the DRL framework, showing that on-policy loss is bounded by every agent's standard off-policy loss and an additional SUFT OPE term. This term is computable by storing past value network outputs in the experience replay buffer, thereby reusing discarded data to improve agents' performance. Experimental results across diverse environments and agents show that our method leads to significant improvements in convergence rates and reward outcomes.
+
+            </p>
+        </section>
         <!-- Citation -->
         <section>
             <h2>Citation</h2>

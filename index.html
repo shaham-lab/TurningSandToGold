@@ -381,7 +381,7 @@
         <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
           \[
             \epsilon_{\text{On-Policy}_Q}
-            leq
+            \leq
             \epsilon_{\text{Off-Policy}_Q} 
             +
             \psi_{\text{SUFT}_Q}
@@ -393,14 +393,15 @@
             We are optimizing the SUFT causal bound on the loss, yielding the following SUFT objective term:
         </p>
         <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
-            \epsilon_{\text{Off-Policy}_Q} 
-            +
-            \lambda_\text{TF}\cdot \psi_{\text{SUFT}_{Q}}.
-          \]
+            \[
+                \epsilon_{\text{Off-Policy}_Q} 
+                +
+                \lambda_\text{TF}\cdot \psi_{\text{SUFT}_{Q}}.
+            \]
         </div>
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
             In value-based methods such as DQN agents, the SUFT term is seamlessly added to the standard loss function, while in Actor-Critic architectures, it is incorporated into the critic's loss.
-            To compute the SUFT OPE term we store the behavior policy value network outputs resulting in an experience tuple of the form \(\left(s, a, r, s', Q(s, a;\theta_\text{behavior})\right)\), instead of \(\left(s, a, r, s'\right)\).
+            To compute the SUFT OPE term we store the behavior policy value network outputs resulting in an experience tuple of the form \(\left(s, a, r, s', Q(s, a;\theta_\text{behavior})\right)\), instead of the standard \(\left(s, a, r, s'\right)\).
         </p>
           <div class="method-grid">
             <div class="method-card">

@@ -1,10 +1,10 @@
 # Turning Sand to Gold: Recycling Data to Bridge On-Policy and Off-Policy Learning via Causal Bound
 
 ## Paper Link
-[Turning Sand to Gold on OpenReview](https://openreview.net/forum?id=5UtsjOGsDx)
-[Turning Sand to Gold on ArXiv](https://www.arxiv.org/abs/2507.11269)
-[Turning Sand to Gold on NeurIPS 2025](https://neurips.cc/virtual/2025/poster/119864)
-[Turning Sand to Gold Project Page](https://shaham-lab.github.io/TurningSandToGold/)
+[Turning Sand to Gold on OpenReview](https://openreview.net/forum?id=5UtsjOGsDx)  
+[Turning Sand to Gold on ArXiv](https://www.arxiv.org/abs/2507.11269)  
+[Turning Sand to Gold on NeurIPS 2025](https://neurips.cc/virtual/2025/poster/119864)  
+[Turning Sand to Gold Project Page](https://shaham-lab.github.io/TurningSandToGold/)  
 ## Authors 
 - [Tal Fiskus](https://www.linkedin.com/in/talfiskus/)
 - [Dr. Uri Shaham](https://www.linkedin.com/in/urishaham/)

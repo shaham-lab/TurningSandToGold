@@ -16,7 +16,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #222;
-    background: #faf9f6;
+    background: #f9fafc; /* TAL NOTE: slightly cooler neutral background */
   }
 
   .container {
@@ -27,8 +27,8 @@
 
   /* Header */
   header {
-    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
-    color: #222;
+    background: linear-gradient(135deg, #0a66ff 0%, #004ad8 100%); /* TAL NOTE: replaced gold gradient with blue gradient */
+    color: white; /* TAL NOTE: switch to white text for readability */
     padding: 80px 0 60px;
     text-align: center;
   }
@@ -42,24 +42,24 @@
   .venue {
     font-size: 1.3em;
     margin-bottom: 30px;
-      color: #2a1f00; 
-      font-weight: 600; 
-      letter-spacing: 0.5px; 
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
-    opacity: 0.9;
+    color: #e0e7ff; /* TAL NOTE: soft light blue tone for secondary text on blue */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); /* TAL NOTE: subtle lift for readability */
   }
 
   .authors {
     font-size: 1.1em;
     margin-bottom: 15px;
     line-height: 1.8;
-    color: #444;
+    color: #f1f5ff; /* TAL NOTE: lighter text to contrast header blue */
   }
 
   .affiliations {
     font-size: 0.95em;
     opacity: 0.9;
     margin-bottom: 30px;
+    color: #dbe5ff; /* TAL NOTE: consistent secondary tone */
   }
 
   /* Links */
@@ -76,20 +76,20 @@
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: #fff3cd;
-    color: #5a4b00;
+    background: white; /* TAL NOTE: switched to white for clarity on blue background */
+    color: #0866ff; /* TAL NOTE: primary accent color */
     text-decoration: none;
     border-radius: 50px;
-    transition: all 0.3s;
-    border: 1px solid #e0c77f;
+    transition: all 0.3s ease;
+    border: 1px solid #0866ff;
     font-weight: 500;
   }
 
   .link-button:hover {
-    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
-    color: #222;
+    background: #0866ff; /* TAL NOTE: blue fill on hover */
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 18px rgba(8, 102, 255, 0.3);
   }
 
   /* Main */
@@ -103,7 +103,7 @@
 
   section {
     padding: 60px 80px;
-    border-bottom: 1px solid #f0e6c5;
+    border-bottom: 1px solid #e6ecff; /* TAL NOTE: soft blue divider */
   }
 
   section:last-child {
@@ -113,7 +113,7 @@
   h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    color: #b69121;
+    color: #0866ff; /* TAL NOTE: primary accent color for headings */
     text-align: center;
     font-weight: 600;
   }
@@ -121,12 +121,12 @@
   h3 {
     font-size: 1.4em;
     margin: 30px 0 15px;
-    color: #5a4b00;
+    color: #004ad8; /* TAL NOTE: darker blue for subheadings */
   }
 
   /* Abstract */
   .abstract {
-    background: linear-gradient(135deg, #fffaf0 0%, #fff5d6 100%);
+    background: linear-gradient(135deg, #f4f8ff 0%, #e9f1ff 100%); /* TAL NOTE: blue-tinted neutral */
   }
 
   .abstract p {
@@ -147,12 +147,13 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dbe5ff; /* TAL NOTE: thin blue border */
   }
 
   .figure-caption {
     margin-top: 15px;
     font-size: 0.95em;
-    color: #7a6e48;
+    color: #4b5b9a; /* TAL NOTE: muted blue-gray caption text */
     font-style: italic;
   }
 
@@ -165,15 +166,15 @@
   }
 
   .method-card {
-    background: #fffdf6;
+    background: #f9fbff; /* TAL NOTE: blue-tinted white */
     padding: 25px;
     border-radius: 12px;
-    border-left: 4px solid #d4af37;
+    border-left: 4px solid #0866ff; /* TAL NOTE: primary blue stripe */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   }
 
   .method-card h4 {
-    color: #b69121;
+    color: #0866ff; /* TAL NOTE: primary accent */
     margin-bottom: 10px;
     font-size: 1.2em;
   }
@@ -187,12 +188,12 @@
   }
 
   .result-card {
-    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
-    color: #222;
+    background: linear-gradient(135deg, #0a66ff 0%, #004ad8 100%); /* TAL NOTE: blue gradient for metric cards */
+    color: white;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   }
 
   .result-card .metric {
@@ -203,13 +204,13 @@
 
   .result-card .label {
     font-size: 1em;
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   /* Citation */
   .citation-box {
-    background: #fffdf6;
-    border-left: 4px solid #d4af37;
+    background: #f9fbff;
+    border-left: 4px solid #0866ff; /* TAL NOTE: consistent blue stripe */
     padding: 20px;
     margin: 30px 0;
     font-family: 'Courier New', monospace;
@@ -228,17 +229,18 @@
   }
 
   .placeholder-image {
-    background: linear-gradient(135deg, #faf3dd 0%, #fffaf0 100%);
-    border: 2px dashed #e0c77f;
+    background: linear-gradient(135deg, #eaf2ff 0%, #f5f8ff 100%); /* TAL NOTE: blue-tinted placeholder */
+    border: 2px dashed #aac4ff;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 300px;
     border-radius: 10px;
-    color: #7a6e48;
+    color: #4b5b9a;
     font-size: 1.2em;
   }
 </style>
+
 
 </head>
 <body>

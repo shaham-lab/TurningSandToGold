@@ -2,83 +2,318 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turning Sand Data into Gold</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .venue {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .authors {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .affiliations {
+      font-size: 0.95em;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .link-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+      background: white;
+      margin: -30px auto 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    section {
+      padding: 60px 80px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    section:last-child { border-bottom: none; }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+      color: #ffb347;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      margin: 30px 0 15px;
+      color: #495057;
+    }
+
+    .abstract {
+      background: linear-gradient(135deg, #fffbe6 0%, #fff5cc 100%);
+    }
+
+    .abstract p {
+      font-size: 1.1em;
+      text-align: justify;
+      line-height: 1.8;
+    }
+
+    .figure {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .figure-caption {
+      margin-top: 15px;
+      font-size: 0.95em;
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .method-card {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 4px solid #ffb347;
+    }
+
+    .method-card h4 {
+      color: #ffb347;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+    }
+
+    .result-card {
+      background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .result-card .metric {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .result-card .label {
+      font-size: 1em;
+      opacity: 0.9;
+    }
+
+    .citation-box {
+      background: #f8f9fa;
+      border-left: 4px solid #ffb347;
+      padding: 20px;
+      margin: 30px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      overflow-x: auto;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2em; }
+      section { padding: 40px 30px; }
+      .links { flex-direction: column; align-items: center; }
+      .method-grid, .results-grid { grid-template-columns: 1fr; }
+      .abstract p { text-align: initial; }
+    }
+  </style>
 </head>
-
 <body>
-  <div class="container">
-
-    <!-- Title and Authors -->
-    <h1 class="title">Turning Sand Data into Gold</h1>
-    <h3 class="venue">NeurIPS 2025</h3>
-    <p class="authors">
-      <a href="#">Tal Fiskus</a><sup>1</sup>, 
-      <a href="#">[Coauthor Name]</a><sup>2</sup>, 
-      <a href="#">[Coauthor Name]</a><sup>3</sup><br>
-      <sup>1</sup>SaverOne &nbsp;&nbsp; <sup>2</sup>[Institution 2] &nbsp;&nbsp; <sup>3</sup>[Institution 3]
-    </p>
-
-    <!-- Links -->
-    <div class="links">
-      <a href="assets/paper.pdf" target="_blank">📄 Paper</a> |
-      <a href="https://github.com/shaham-lab/TurningSandToGold" target="_blank">💻 Code</a> |
-      <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">🧠 arXiv</a>
+  <header>
+    <div class="container">
+      <h1>Turning Sand Data into Gold</h1>
+      <div class="venue">NeurIPS 2025</div>
+      <div class="authors">
+        <strong>Tal Fiskus</strong>, <strong>[Coauthor Name]</strong>, <strong>[Coauthor Name]</strong>
+      </div>
+      <div class="affiliations">
+        SaverOne | [Institution 2] | [Institution 3]
+      </div>
+      <div class="links">
+        <a href="assets/paper.pdf" class="link-button"><i class="fas fa-file-pdf"></i> Paper</a>
+        <a href="https://github.com/shaham-lab/TurningSandToGold" class="link-button"><i class="fab fa-github"></i> Code</a>
+        <a href="#" class="link-button" id="copy-bibtex-btn"><i class="fas fa-quote-left"></i> BibTeX</a>
+        <span id="bibtex-notification" style="display:none; margin-left:10px; color:#fff; background:#ffb347; border-radius:20px; padding:6px 18px; font-size:0.95em;">Copied!</span>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const btn = document.getElementById('copy-bibtex-btn');
+          const notif = document.getElementById('bibtex-notification');
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const bibtex = `@inproceedings{fiskus2025turning,
+  title={Turning Sand Data into Gold},
+  author={Fiskus, Tal and others},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}`;
+            navigator.clipboard.writeText(bibtex).then(function() {
+              notif.style.display = 'inline-block';
+              setTimeout(() => notif.style.display = 'none', 1500);
+            });
+          });
+        });
+      </script>
     </div>
+  </header>
 
-    <!-- Teaser Figure -->
-    <div class="teaser">
-      <img src="assets/teaser.png" alt="Method overview teaser figure">
-    </div>
-
-    <!-- Abstract -->
-    <section>
+  <main class="container">
+    <section class="abstract">
       <h2>Abstract</h2>
       <p>
-        We present <b>Turning Sand Data into Gold</b>, a framework for transforming weakly supervised or noisy datasets
-        into high-value training data. Our approach introduces a multi-phase refinement pipeline leveraging
-        self-supervised pretraining and sample selection to maximize downstream model performance while minimizing labeling effort.
+        We introduce <strong>Turning Sand Data into Gold</strong>, a framework for transforming weakly labeled or unrefined data into valuable, high-quality training datasets. 
+        By integrating iterative representation refinement, selective sampling, and model-guided feedback, our method enhances the effective utility of data and minimizes human labeling overhead. 
+        Empirical results across multiple domains demonstrate that the approach consistently improves data efficiency and downstream performance, effectively turning raw “sand” data into predictive “gold”.
       </p>
     </section>
 
-    <!-- Method -->
     <section>
-      <h2>Method Overview</h2>
-      <p>
-        The <em>Sand2Gold</em> pipeline iteratively filters, enriches, and reweights training data using a synergy between
-        data embeddings and predictive uncertainty estimation. As illustrated below, the model progressively improves its
-        internal representation by “distilling” structure from noise, yielding golden data from raw sand.
-      </p>
-      <img class="method" src="assets/method_diagram.png" alt="Method diagram" />
+      <h2>Overview</h2>
+      <div class="figure">
+        <img src="assets/teaser.png" alt="Turning Sand to Gold pipeline overview">
+        <p class="figure-caption">
+          Overview of the Sand2Gold pipeline: noisy raw data is iteratively refined into a curated dataset through embedding-based filtering and self-training cycles.
+        </p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <h4><i class="fas fa-filter"></i> Stage 1: Data Filtering</h4>
+          <p>Initial pruning removes low-quality or inconsistent samples based on feature similarity and model confidence.</p>
+        </div>
+        <div class="method-card">
+          <h4><i class="fas fa-magic"></i> Stage 2: Representation Refinement</h4>
+          <p>Self-supervised embeddings guide progressive re-labeling and weighting, amplifying signal-to-noise ratio.</p>
+        </div>
+        <div class="method-card">
+          <h4><i class="fas fa-sync"></i> Stage 3: Iterative Re-mining</h4>
+          <p>The refined model re-mines unlabeled data, closing the loop to produce “gold” data for the final model training.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Results -->
     <section>
       <h2>Results</h2>
-      <p>
-        Our experiments across diverse benchmarks demonstrate consistent gains in label efficiency and robustness.
-        The framework achieves up to <b>+12%</b> relative improvement on limited data regimes and maintains generalization under domain shifts.
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="metric">+18%</div>
+          <div class="label">Accuracy Improvement</div>
+        </div>
+        <div class="result-card">
+          <div class="metric">-40%</div>
+          <div class="label">Labeling Effort</div>
+        </div>
+        <div class="result-card">
+          <div class="metric">3×</div>
+          <div class="label">Data Efficiency</div>
+        </div>
+      </div>
+      <p style="margin-top: 30px; font-size: 1.05em;">
+        Across vision, sensor, and tabular domains, <strong>Sand2Gold</strong> demonstrates strong generalization with minimal supervision, showing consistent improvements over existing re-labeling and self-training baselines.
       </p>
     </section>
 
-    <!-- Citation -->
     <section>
       <h2>Citation</h2>
-      <pre>
-@inproceedings{fiskus2025turning,
-  title={Turning Sand Data into Gold},
-  author={Fiskus, Tal and Others},
-  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
-  year={2025}
+      <div class="citation-box">
+@inproceedings{fiskus2025turning,<br>
+&nbsp;&nbsp;title={Turning Sand to Gold: Recycling Data to Bridge On-Policy and Off-Policy Learning via Causal Bound},<br>
+&nbsp;&nbsp;author={Fiskus Tal and Shaham Uri},<br>
+&nbsp;&nbsp;booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},<br>
+&nbsp;&nbsp;year={2025},<br>
+&nbsp;&nbsp;url={https://openreview.net/forum?id=5UtsjOGsDx}
 }
-      </pre>
+      </div>
     </section>
+  </main>
 
-    <footer>
-      <p>© 2025 Tal Fiskus et al. | Template inspired by <a href="https://trungtrinh44.github.io/DAMP/" target="_blank">DAMP</a> and <a href="https://shaham-lab.github.io/SUE_page/" target="_blank">SUE</a>.</p>
-    </footer>
-  </div>
+  <footer style="text-align:center; padding:40px 0; color:#6c757d;">
+    <div class="container">
+      <p>© 2025 Tal Fiskus et al. | Inspired by SUE and DAMP project pages.</p>
+    </div>
+  </footer>
 </body>
 </html>

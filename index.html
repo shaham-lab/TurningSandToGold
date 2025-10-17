@@ -4,57 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Turning Sand Data into Gold</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
 
-    <h1>Turning Sand Data into Gold</h1>
-    <h3>NeurIPS 2025</h3>
+    <!-- Title and Authors -->
+    <h1 class="title">Turning Sand Data into Gold</h1>
+    <h3 class="venue">NeurIPS 2025</h3>
     <p class="authors">
-      Tal Fiskus<sup>1</sup>, [Your Coauthors]<sup>2,3</sup><br>
-      <sup>1</sup>SaverOne, <sup>2</sup>[Institution 2], <sup>3</sup>[Institution 3]
+      <a href="#">Tal Fiskus</a><sup>1</sup>, 
+      <a href="#">[Coauthor Name]</a><sup>2</sup>, 
+      <a href="#">[Coauthor Name]</a><sup>3</sup><br>
+      <sup>1</sup>SaverOne &nbsp;&nbsp; <sup>2</sup>[Institution 2] &nbsp;&nbsp; <sup>3</sup>[Institution 3]
     </p>
 
-    <p class="links">
-      [<a href="assets/paper.pdf">Paper</a>] |
-      [<a href="https://arxiv.org/abs/xxxx.xxxxx">arXiv</a>] |
-      [<a href="https://github.com/yourname/Turning-Sand-Data-into-Gold">Code</a>]
-    </p>
+    <!-- Links -->
+    <div class="links">
+      <a href="assets/paper.pdf" target="_blank">📄 Paper</a> |
+      <a href="https://github.com/shaham-lab/TurningSandToGold" target="_blank">💻 Code</a> |
+      <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">🧠 arXiv</a>
+    </div>
 
-    <img src="assets/teaser.png" alt="Teaser figure" class="teaser">
+    <!-- Teaser Figure -->
+    <div class="teaser">
+      <img src="assets/teaser.png" alt="Method overview teaser figure">
+    </div>
 
-    <h2>Abstract</h2>
-    <p>
-      In this paper, we present <b>Turning Sand Data into Gold</b>, a novel approach that transforms unstructured or weakly labeled datasets into high-value training data...
-      <!-- Summarize your abstract here -->
-    </p>
+    <!-- Abstract -->
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        We present <b>Turning Sand Data into Gold</b>, a framework for transforming weakly supervised or noisy datasets
+        into high-value training data. Our approach introduces a multi-phase refinement pipeline leveraging
+        self-supervised pretraining and sample selection to maximize downstream model performance while minimizing labeling effort.
+      </p>
+    </section>
 
-    <h2>Method Overview</h2>
-    <p>
-      Our approach introduces a multi-stage refinement pipeline that leverages representation learning and selective sampling...
-    </p>
+    <!-- Method -->
+    <section>
+      <h2>Method Overview</h2>
+      <p>
+        The <em>Sand2Gold</em> pipeline iteratively filters, enriches, and reweights training data using a synergy between
+        data embeddings and predictive uncertainty estimation. As illustrated below, the model progressively improves its
+        internal representation by “distilling” structure from noise, yielding golden data from raw sand.
+      </p>
+      <img class="method" src="assets/method_diagram.png" alt="Method diagram" />
+    </section>
 
-    <h2>Results</h2>
-    <p>
-      We evaluate our method on [datasets] and show improvements of [X%] over baseline methods in data efficiency and model generalization.
-    </p>
+    <!-- Results -->
+    <section>
+      <h2>Results</h2>
+      <p>
+        Our experiments across diverse benchmarks demonstrate consistent gains in label efficiency and robustness.
+        The framework achieves up to <b>+12%</b> relative improvement on limited data regimes and maintains generalization under domain shifts.
+      </p>
+    </section>
 
-    <h2>Citation</h2>
-    <pre>
+    <!-- Citation -->
+    <section>
+      <h2>Citation</h2>
+      <pre>
 @inproceedings{fiskus2025turning,
   title={Turning Sand Data into Gold},
-  author={Fiskus, Tal and [Coauthors]},
-  booktitle={NeurIPS},
+  author={Fiskus, Tal and Others},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2025}
 }
-    </pre>
+      </pre>
+    </section>
 
     <footer>
-      <p>© 2025 Tal Fiskus and collaborators. Built with ❤️ using GitHub Pages.</p>
+      <p>© 2025 Tal Fiskus et al. | Template inspired by <a href="https://trungtrinh44.github.io/DAMP/" target="_blank">DAMP</a> and <a href="https://shaham-lab.github.io/SUE_page/" target="_blank">SUE</a>.</p>
     </footer>
-
   </div>
 </body>
 </html>

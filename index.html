@@ -15,8 +15,8 @@
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: #f8f9fa;
+    color: #222;
+    background: #faf9f6;
   }
 
   .container {
@@ -27,8 +27,8 @@
 
   /* Header */
   header {
-    background: linear-gradient(135deg, #764ba2 0%, #ffb347 100%);
-    color: white;
+    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
+    color: #222;
     padding: 80px 0 60px;
     text-align: center;
   }
@@ -42,13 +42,15 @@
   .venue {
     font-size: 1.3em;
     margin-bottom: 30px;
-    opacity: 0.95;
+    color: #5a4b00;
+    opacity: 0.9;
   }
 
   .authors {
     font-size: 1.1em;
     margin-bottom: 15px;
     line-height: 1.8;
+    color: #444;
   }
 
   .affiliations {
@@ -71,33 +73,34 @@
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: #fff3cd;
+    color: #5a4b00;
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #e0c77f;
+    font-weight: 500;
   }
 
   .link-button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
+    color: #222;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
 
-  /* Main Content */
+  /* Main */
   main {
     background: white;
     margin: -30px auto 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
   }
 
   section {
     padding: 60px 80px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #f0e6c5;
   }
 
   section:last-child {
@@ -107,28 +110,30 @@
   h2 {
     font-size: 2em;
     margin-bottom: 30px;
-    color: #764ba2;
+    color: #b69121;
     text-align: center;
+    font-weight: 600;
   }
 
   h3 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 30px 0 15px;
-    color: #495057;
+    color: #5a4b00;
   }
 
   /* Abstract */
   .abstract {
-    background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+    background: linear-gradient(135deg, #fffaf0 0%, #fff5d6 100%);
   }
 
   .abstract p {
     font-size: 1.1em;
     text-align: justify;
     line-height: 1.8;
+    color: #333;
   }
 
-  /* Figure */
+  /* Figures */
   .figure {
     margin: 40px 0;
     text-align: center;
@@ -144,7 +149,7 @@
   .figure-caption {
     margin-top: 15px;
     font-size: 0.95em;
-    color: #6c757d;
+    color: #7a6e48;
     font-style: italic;
   }
 
@@ -157,19 +162,20 @@
   }
 
   .method-card {
-    background: #f8f9fa;
+    background: #fffdf6;
     padding: 25px;
     border-radius: 12px;
-    border-left: 4px solid #764ba2;
+    border-left: 4px solid #d4af37;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   }
 
   .method-card h4 {
-    color: #764ba2;
+    color: #b69121;
     margin-bottom: 10px;
     font-size: 1.2em;
   }
 
-  /* Results Grid */
+  /* Results */
   .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -178,11 +184,12 @@
   }
 
   .result-card {
-    background: linear-gradient(135deg, #ffb347 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #f5d76e 0%, #d4af37 100%);
+    color: #222;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   }
 
   .result-card .metric {
@@ -196,15 +203,16 @@
     opacity: 0.9;
   }
 
-  /* Citation Box */
+  /* Citation */
   .citation-box {
-    background: #f8f9fa;
-    border-left: 4px solid #764ba2;
+    background: #fffdf6;
+    border-left: 4px solid #d4af37;
     padding: 20px;
     margin: 30px 0;
     font-family: 'Courier New', monospace;
     font-size: 0.9em;
     overflow-x: auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   }
 
   /* Responsive */
@@ -217,14 +225,14 @@
   }
 
   .placeholder-image {
-    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
-    border: 2px dashed #999;
+    background: linear-gradient(135deg, #faf3dd 0%, #fffaf0 100%);
+    border: 2px dashed #e0c77f;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 300px;
     border-radius: 10px;
-    color: #666;
+    color: #7a6e48;
     font-size: 1.2em;
   }
 </style>
@@ -434,7 +442,7 @@
               &nbsp;&nbsp;author={Tal Fiskus and Uri Shaham},<br>
               &nbsp;&nbsp;journal={The Thirty-ninth Annual Conference on Neural Information Processing Systems},<br>
               &nbsp;&nbsp;year={2025},<br>
-              &nbsp;&nbsp;url={https://openreview.net/forum?id=5UtsjOGsDx}
+              &nbsp;&nbsp;url={https://openreview.net/forum?id=5UtsjOGsDx}<br>
               }
             </div>
         </section>

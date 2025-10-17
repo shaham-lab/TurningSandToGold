@@ -5,7 +5,7 @@
 ## Authors 
 - [Tal Fiskus](https://www.linkedin.com/in/talfiskus/)
 - [Dr. Uri Shaham](https://www.linkedin.com/in/urishaham/)
-- 
+  
 ## Paper Link
 - [NeurIPS 2025](https://neurips.cc/virtual/2025/poster/119864)  
 - [OpenReview](https://openreview.net/forum?id=5UtsjOGsDx)  

@@ -378,8 +378,29 @@
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
             The interpretation of this causal upper bound in the DRL framework establishes an upper bound to the on-policy loss, by the standard off-policy loss and an additional <strong>SUFT off-policy evaluation term (OPE)</strong>.
         </p>
-        <p class="figure-caption" style="text-align: center; font-size: 0.95em; color: #6c757d; font-style: italic;">
-          To the best of our knowledge, we are the first to introduce an upper bound on the factual loss within the causal framework and adapt it to the DRL setting, thereby bounding the on-policy loss.
+        <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
+          \[
+            \epsilon_{\text{On-Policy}_Q}
+            leq
+            \epsilon_{\text{Off-Policy}_Q} 
+            +
+            \psi_{\text{SUFT}_Q}
+            + 
+            \delta.
+          \]
+        </div>
+        <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
+            We are optimizing the SUFT causal bound on the loss, yielding the following SUFT objective term:
+        </p>
+        <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
+            \epsilon_{\text{Off-Policy}_Q} 
+            +
+            \lambda_\text{TF}\cdot \psi_{\text{SUFT}_{Q}}.
+          \]
+        </div>
+        <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
+            In value-based methods such as DQN agents, the SUFT term is seamlessly added to the standard loss function, while in Actor-Critic architectures, it is incorporated into the critic's loss.
+            To compute the SUFT OPE term we store the behavior policy value network outputs resulting in an experience tuple of the form \(\left(s, a, r, s', Q(s, a;\theta_\text{behavior})\right)\), instead of \(\left(s, a, r, s'\right)\).
         </p>
           <div class="method-grid">
             <div class="method-card">
@@ -388,13 +409,16 @@
             </div>
             <div class="method-card">
                 <h4><i class="fas fa-arrows-rotate"></i> Recycling Overlooked Data</h4>
-                <p>Our method utilizes and reuses the value network outputs in order to compute the SUFT OPE term. Our approach effectively transforms overlooked data into valuable causal insights, metaphorically <strong>turning sand data into gold</strong>.</p>
+                <p>Our method utilizes and reuses the value network outputs in order to compute the SUFT OPE term.</p>
             </div>
             <div class="method-card">
                 <h4><i class="fas fa-globe"></i> Universal Implementation</h4>
                 <p>Our method is applicable to any DRL agent with a V or Q-value network that influences its policy. </p>
             </div>
         </div>
+          <p class="figure-caption" style="text-align: center; font-size: 0.95em; color: #6c757d; font-style: italic;">
+              To the best of our knowledge, we are the first to introduce an upper bound on the factual loss within the causal framework and adapt it to the DRL setting, thereby bounding the on-policy loss.
+          </p>
       </section>
       
       <!-- MathJax rendering support -->

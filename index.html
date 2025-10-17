@@ -435,7 +435,7 @@
         </section>
 
         <!-- Conclusion -->
-        <section>
+        <section class="abstract">
             <h2>Conclusion</h2>
             <p>
                 This paper presents SUFT, a causal upper-bound loss optimization method that enhances DRL sample efficiency and reduces computational demands at <strong>negligible cost</strong>. We begin by establishing a provable bound on the factual loss within the Neyman-Rubin potential outcomes framework and seamlessly adapting it to the DRL framework, showing that on-policy loss is bounded by every agent's standard off-policy loss and an additional SUFT OPE term. This term is computable by storing past value network outputs in the experience replay buffer, thereby reusing discarded data to improve agents' performance. Experimental results across diverse environments and agents show that our method leads to significant improvements in convergence rates and reward outcomes.

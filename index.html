@@ -38,7 +38,7 @@
         
         /* Header */
         header {
-          background: linear-gradient(135deg, #0866ff 0%, #4b9eff 100%);
+          background: linear-gradient(135deg, #232D5D 0%, #4b9eff 100%);
           color: white;
           padding: 80px 0 60px;
           text-align: center;
@@ -94,7 +94,7 @@
           gap: 8px;
           padding: 12px 28px;
           background: white;
-          color: #0866ff;
+          color: #232D5D;
           text-decoration: none;
           border-radius: 50px;
           transition: all 0.3s;
@@ -130,7 +130,7 @@
         h2 {
           font-size: 2em;
           margin-bottom: 30px;
-          color: #0866ff;
+          color: #232D5D;
           text-align: center;
           font-weight: 600;
         }
@@ -380,7 +380,7 @@
             We establish a causal upper bound on the unobserved factual loss using the observed counterfactual loss and the estimated treatment effect:
         </p>
       
-        <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
+        <div style="text-align: center; font-size: 1.3em; margin: 40px 0; overflow-x: auto;">
           \[
             \epsilon_{F_{\phi}} 
             \leq 
@@ -388,13 +388,13 @@
             +
             \psi_{\phi} 
             + 
-            \delta.
+            \delta
           \]
         </div>
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
             The interpretation of this causal upper bound in the DRL framework establishes an upper bound to the on-policy loss, by the standard off-policy loss and an additional <strong>SUFT off-policy evaluation term (OPE)</strong>:
         </p>
-        <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
+        <div style="text-align: center; font-size: 1.3em; margin: 40px 0; overflow-x: auto;">
           \[
             \epsilon_{\text{On-Policy}_Q}
             \leq
@@ -402,17 +402,17 @@
             +
             \psi_{\text{SUFT}_Q}
             + 
-            \delta.
+            \delta
           \]
         </div>
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
             We are optimizing the SUFT causal bound on the loss, yielding the following SUFT objective term:
         </p>
-        <div style="text-align: center; font-size: 1.3em; margin: 40px 0;">
+        <div style="text-align: center; font-size: 1.3em; margin: 40px 0; overflow-x: auto;">
             \[
                 \epsilon_{\text{Off-Policy}_Q} 
                 +
-                \lambda_\text{TF}\cdot \psi_{\text{SUFT}_{Q}}.
+                \lambda_\text{TF}\cdot \psi_{\text{SUFT}_{Q}}
             \]
         </div>
         <p style="font-size: 1.05em; line-height: 1.8; text-align: justify;">
